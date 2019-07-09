@@ -7,7 +7,7 @@ DISCLAIMER: I don't want to be shit on again, like when I posted the Akamai _abc
 
 
 Current/Soon Elements in the Thread:
-- Sucuri Bypass (footdistrict.com)
+- Sucuri Bypass (footdistrict.com -> Explanation + Short Help to bypass )
 - PerimeterX Bypass (px3 solebox.com) 
 - Deobfuscated Akamai Script
 - Srver Bypass (Wellgosh)
