@@ -1,0 +1,33 @@
+#ez
+
+#first, create the payload object
+
+#there are various, we take the most simple one, as we just need to create the cookie. to mantain it then, there will be other challenges
+
+
+import time
+import base64, requests, json
+
+[{"t":"PX182","d":{"PX58":[],"PX183":int(time.time()),"PX371":True,"PX96":"https://www.solebox.com/"}}]
+#our json we will use for the payload param
+#convert it into base64 next
+
+header={"Content-type": "application/x-www-form-urlencoded",
+    "Origin": "https://www.solebox.com",
+    "Referer": "https://www.solebox.com/index.php",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"
+}
+
+data={
+    "payload":payload, #the val from above once base64 encrypted
+    "appId":"PXuR63h57Z",
+    "tag":"v4.7.5"
+}
+
+req=s.post("https://collector-pxur63h57z.perimeterx.net/api/v2/collector", data=data, headers=header)
+#now let's check the response text:
+#bake|_px3|330|32d3d2f92829c37614298fcc0fe11dd7c8b0e44163b28db1a2b0f8edf80333aa:gg5lxomMuzP7evkKXX8qrxW8PLNhh3iFM6a3ocCyMieTTZPEfcpSUyxLivsU/qVWcWbUPelbBoYhWHfU0UsTjw==:1000:XFsUD7QKGhdNCmGZTY7HWCZTxIuNmeVD1glGitdAm0Z7lmC8Gsvf3OI+FZV6QiaRg25qf6E30iPmCvQ3F2GDLLtMAcOJASpNG8ydpdNR6h0bS1knH7w7gPwenrZKMTi8IUElNX2Gp/lSxUD/OF1/zX3yBOYeydkutONN5vanqEc=|true|300
+#parse this and you have your px3 cookie:
+#split the response at each ("|") req.text.split("|")
+#You will have a list and with the correct indx, get the px3 val
+#do it yourself. you have everyhsit here, and remember, this will get you the cookie initially,  but know that you have to mantain it troughout, wich is way harder
